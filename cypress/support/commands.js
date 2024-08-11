@@ -10,7 +10,17 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
+// Cypress.Commands.add('login', (email, password) => { ... })]
+Cypress.Commands.add('LoginAPI', () => {
+  cy.request('POST', Cypress.env('url') + '/api/ecom/auth/login', {
+    userEmail: 'anshika@gmail.com',
+    userPassword: 'Iamking@000',
+  }).then((res) => {
+    expect(res.status).to.eq(200)
+    Cypress.env('token', res.body.token)
+  })
+})
+
 //
 //
 // -- This is a child command --

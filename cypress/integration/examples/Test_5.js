@@ -1,5 +1,5 @@
 describe('Handling child windows', function () {
-  it('Should handle chikd window', function () {
+  it('Should handle child window', function () {
     cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
     cy.get('#opentab').invoke('removeAttr', 'target').click()
 
