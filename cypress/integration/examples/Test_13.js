@@ -10,11 +10,10 @@ describe('JWT Session', function () {
       },
     })       
   })
-  cy.get('.card-body b')
-    .eq(1)
-    .then(function (ele) {
-      productName = ele.text()
-    })
+  cy.get(".card-body b").eq(1).then(function(ele)
+      {
+      productName =  ele.text();
+      })
   cy.get('.card-body button:last-of-type').eq(1).click()
   cy.get("[routerlink*='cart']").click()
   cy.contains('Checkout').click()
